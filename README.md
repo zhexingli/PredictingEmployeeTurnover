@@ -81,17 +81,17 @@ Finally, make a heatmap and see if some of the variables are correlated.
 
 ![Fig12](https://github.com/zhexingli/PredictingEmployeeTurnover/assets/18060088/8b51a8e6-4c9c-43ab-a4bb-935198923fa6)
 
-Employee's decision of leaving is negatively correlated with their level of satisfaction. Performance evluation, number of projects, and average monthyly working hours are all positively correlated. 
+Employee's decision of leaving is negatively correlated with their level of satisfaction. Performance evaluation, number of projects, and average monthly working hours are all positively correlated. 
 
 
-Next, create some models to predict whether an employee would quit or not. Before doing so, categorical variables are all converted to numerical representations by assigning them dummy variables with the exception of salary, which is ordianal, so need to be represented by actual numerical values such as 0, 1, and 2 wrt low, medium, and high income.
+Next, create some models to predict whether an employee would quit or not. Before doing so, categorical variables are all converted to numerical representations by assigning them dummy variables with the exception of salary, which is ordianal, so need to be represented by actual numerical values such as 0, 1, and 2 with respect to low, medium, and high income.
 
 For any classification tasks, it's worth first trying a basic logistic regression model to see how the model works with the given data.
 For logistic regression, it doesn't handle well outliers so these need to be removed. A boxplot can show whether there're any outliers in the data. The number of years an employee has worked at the companies is the variable that need to be treated with because working at the company for too long or too short of a time might not provide an unbiased evaluation.
 
 ![Fig13](https://github.com/zhexingli/PredictingEmployeeTurnover/assets/18060088/19355c37-2dfa-43d6-918b-ca33f99c40fe)
 
-Indeedn, there are quite a lot of outliers. These outliers are removed if they're 1.5 times the interquartile range above or below the 75% or 25% percentile. A total of 824 outliers were removed.
+Indeed, there are quite a lot of outliers. These outliers are removed if they're 1.5 times the interquartile range above or below the 75% or 25% percentile. A total of 824 outliers were removed.
 
 Using this dataset, we split the train and test set with a 75% and 25% split and make sure we enable the stratify option within the train_test_split function so that both samples are split according to their proportions in the actual dataset.
 
